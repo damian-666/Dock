@@ -14,6 +14,9 @@ using Dock.Model.Avalonia.Json;
 using Dock.Model.Core;
 using Dock.Serializer;
 
+using AvaloniaInside.MonoGame;
+using DockXamlSample;
+
 namespace DockXamlSample;
 
 public class MainView : UserControl
@@ -29,6 +32,8 @@ public class MainView : UserControl
         _serializer = new AvaloniaDockSerializer();
 
         _dockState = new DockState();
+        
+    
 
         var dock = this.FindControl<DockControl>("Dock");
         if (dock is { })
@@ -64,6 +69,8 @@ public class MainView : UserControl
         };
     }
 
+
+        
     private async Task OpenLayout()
     {
         var storageProvider = StorageService.GetStorageProvider();

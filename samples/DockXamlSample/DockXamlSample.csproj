@@ -35,6 +35,9 @@
   <Import Project="..\..\build\Avalonia.Themes.Fluent.props" />
   <Import Project="..\..\build\Avalonia.Desktop.props" />
   <Import Project="..\..\build\Avalonia.Diagnostics.props" />
+  <ItemGroup>
+    <PackageReference Include="AvaloniaInside.MonoGame" Version="1.0.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Dock.Model\Dock.Model.csproj" />
