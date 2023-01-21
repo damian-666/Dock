@@ -2,8 +2,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:viewModels="clr-namespace:DockDemoMonoGame.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
              x:Class="DockDemoMonoGame.Views.MainViewMonoG">
-  Hello World!
+  
+  <Design.DataContext>
+    <viewModels:MainWindowViewModel/>
+  </Design.DataContext>
+  
+  <Grid RowDefinitions="Auto, *">
+    <Menu Grid.Row="0">
+      <MenuItem Header="_File">
+        <MenuItem x:Name="FileOpenLayout" Header="_Open..."/>
+        <MenuItem x:Name="FileSaveLayout" Header="_Save"/>
+        <Separator/>
+        <MenuItem x:Name="FileCloseLayout" Header="_Close"/>
+      </MenuItem>
+      
+      <MenuItem Header="_Window">
+        <MenuItem x:Name="WindowLayoutSettings" Header="_Layout Settings"/>
+        <MenuItem x:Name="WindowEditLayout" Header="_Edit Layout"/>
+      </MenuItem>
+      
+      <MenuItem Header="_Help">
+        <MenuItem x:Name="HelpGetHelp" Header="_Get Help..."/>
+        <MenuItem x:Name="HelpTutorials" Header="_Tutorials..."/>
+      </MenuItem>
+    </Menu>
+    
+    
+  </Grid>
 </UserControl>
 
