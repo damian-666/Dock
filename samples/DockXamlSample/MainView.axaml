@@ -30,17 +30,17 @@
 
         <!-- Windows -->
 
-        <RootDock.Windows>
-          <DockWindow x:Name="DockWindow" Id="DockWindow" X="281" Y="233" Width="250" Height="400" Topmost="True">
-            <RootDock ActiveDockable="{Binding #ToolDock}" Window="{Binding #DockWindow}">
-              <ToolDock x:Name="ToolDock">
-                <Tool x:Name="ToolWindow" Id="ToolWindow" Title="Tool Window" x:DataType="Tool">
-                  <TextBlock Text="{Binding Title}"/>
-                </Tool>
-              </ToolDock>
-            </RootDock>
-          </DockWindow>
-        </RootDock.Windows>
+        <!-- <RootDock.Windows> -->
+        <!--   <DockWindow x:Name="DockWindow" Id="DockWindow" X="281" Y="233" Width="250" Height="400" Topmost="True"> -->
+        <!--     <RootDock ActiveDockable="{Binding #ToolDock}" Window="{Binding #DockWindow}"> -->
+        <!--       <ToolDock x:Name="ToolDock"> -->
+        <!--         <Tool x:Name="ToolWindow" Id="ToolWindow" Title="Tool Window" x:DataType="Tool"> -->
+        <!--           <TextBlock Text="{Binding Title}"/> -->
+        <!--         </Tool> -->
+        <!--       </ToolDock> -->
+        <!--     </RootDock> -->
+        <!--   </DockWindow> -->
+        <!-- </RootDock.Windows> -->
 
         <ProportionalDock x:Name="MainLayout" Id="MainLayout" Orientation="Horizontal">
 
@@ -101,18 +101,17 @@ property sheet constrols like existing tool has  see image, a color picket-->
              
 
               <!-- Properties Pane -->
-              <ToolDock x:Name="PropertiesPane" Id="PropertiesPane" Proportion="0.3" Alignment="Right">
-                <Tool x:Name="Properties" Id="Properties" Title="Properties" x:DataType="Tool">
-                  <Grid  x:DataType= "game:Game1" Background="Beige">
-                    <UserControl>
-                      <!--P1 
-                      <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"  FallbackBackground="AntiqueWhite"    />
-                      TODO uncomment see excption-->
-                    </UserControl>
-                  </Grid>
-                </Tool>
+              <!-- <ToolDock x:Name="PropertiesPane" Id="PropertiesPane" Proportion="0.3" Alignment="Right"> -->
+              <!--   <Tool x:Name="Properties" Id="Properties" Title="Properties" x:DataType="Tool"> -->
+                  <!-- <Grid  x:DataType= "game:Game1" Background="Beige"> -->
+                  <!--   <UserControl> -->
+                  <!--     <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"  FallbackBackground="AntiqueWhite"    /> -->
+                  <!--     TODO uncomment see excption--> 
+                  <!--   </UserControl> -->
+                  <!-- </Grid> -->
+                <!-- </Tool> -->
 
-                 </ToolDock>
+                 <!-- </ToolDock> -->
              <!--       P3  Try a ListBox and , mabye one with custom template  -->
 
 
