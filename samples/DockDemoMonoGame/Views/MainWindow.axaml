@@ -1,16 +1,30 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:DockDemoMonoGame.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:DockDemoMonoGame.Views"
-        mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+        mc:Ignorable="d" 
+        d:DesignWidth="1280" d:DesignHeight="800"
+        Width="800" Height="600"
         x:Class="DockDemoMonoGame.Views.MainWindow"
+        x:Name="MainWindoww"
         Icon="/Assets/avalonia-logo.ico"
         Title="DockDemoMonoGame">
 
   <Panel>
-      <views:MainViewMonoG/>
+    <ExperimentalAcrylicBorder IsHitTestVisible="False">
+      <ExperimentalAcrylicBorder.Material>
+        <ExperimentalAcrylicMaterial BackgroundSource="Digger"
+                                     TintColor="{DynamicResource SystemAltHighColor}"
+                                     TintOpacity="1"
+                                     MaterialOpacity="0.55" />
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder>
+    <Panel Margin="{Binding #MainWindoww.OffScreenMargin}">
+      <Panel Margin="{Binding #MainWindoww.WindowDecorationMargin}">
+        <views:MainViewMonoG/>
+      </Panel>
     </Panel>
+  </Panel>
 
 </Window>

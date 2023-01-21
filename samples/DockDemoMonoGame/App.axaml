@@ -9,4 +9,8 @@
     <Application.Styles>
         <FluentTheme Mode="Light"/>
     </Application.Styles>
+  
+    <Application.Resources>
+      <Color x:Key="RegionColor">Transparent</Color>
+    </Application.Resources>
 </Application>

@@ -3,7 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:DockDemoMonoGame.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="DockControl"
+             x:CompileBindings="True"
              x:Class="DockDemoMonoGame.Views.MainViewMonoG">
   
   <Design.DataContext>
@@ -30,6 +32,85 @@
       </MenuItem>
     </Menu>
     
+    <Border Grid.Row="1" BorderBrush="Black">
+      <DockControl>
+        <RootDock x:Name="Root" Id="Root" IsCollapsable="False" DefaultDockable="{Binding #MainLayout}">
+          <ProportionalDock x:Name="MainLayout" Id="MainLayout" Orientation="Horizontal">
+            <ToolDock x:Name="LeftPane" Id="LeftPane" Proportion="0.25" Alignment="Left">
+              <Tool x:Name="SolutionExplorer" Id="SolutionExplorer" Title="Solution Explorer" x:DataType="Tool">
+                <TextBlock Text="Tool Dock 1"/>
+              </Tool>
+            </ToolDock>
+        
+            <ProportionalDockSplitter x:Name="LeftSplitter" Id="LeftSplitter" />
+
+              <ProportionalDock x:Name="TopPane" Id="TopPane" Orientation="Vertical">
+
+            <!-- Right Pane -->
+
+            <ProportionalDock x:Name="RightPane" Id="RightPane" Orientation="Horizontal">
+
+              <!-- Documents Pane -->
+
+              <DocumentDock x:Name="DocumentsPane" Id="DocumentsPane" CanCreateDocument="True" ActiveDockable="Document1">
+                <DocumentDock.DocumentTemplate>
+                  <DocumentTemplate>
+                    <StackPanel x:DataType="Document">
+                      <TextBlock Text="Title"/>
+                      <TextBox Text="Text"/>
+                    </StackPanel>
+                  </DocumentTemplate>
+                </DocumentDock.DocumentTemplate>
+                <Document x:Name="Document1" Id="Document1" Title="Program.cs" x:DataType="Document">
+                  <StackPanel>
+                    <TextBlock Text="Text"/>
+                    
+                  </StackPanel>
+
+                </Document>
+                <Document x:Name="Document2" Id="Document2" Title="App.axaml" x:DataType="Document">
+                  <TextBlock Text="Text 2"/>
+                </Document>
+              </DocumentDock>
+ 
+              <ProportionalDockSplitter x:Name="RightSplitter" Id="RightSplitter" />
+
+            </ProportionalDock>
+
+            <ProportionalDockSplitter x:Name="BottomSplitter" Id="BottomSplitter" />
+
+            <!-- Bottom Pane -->
+
+            <ToolDock x:Name="BottomPane" Id="BottomPane" Proportion="0.3" Alignment="Bottom" ActiveDockable="Output">
+              <Tool x:Name="ErrorList" Id="ErrorList" Title="Error List" x:DataType="Tool">
+                <TextBlock Text="{Binding Title}"/>
+              </Tool>
+              <Tool x:Name="Output" Id="Output" Title="Output" x:DataType="Tool">
+                <TextBlock Text="{Binding Title}"/>
+              </Tool>
+              <Tool x:Name="Keyframes" Id="Keyfrmes" Title="Keyframes" x:DataType="Tool">
+                <ListBox>
+                  <Label>spirit1</Label>
+                  <Label>rock</Label>
+                  <Label>rock2</Label>
+                  creature
+                </ListBox>
+              </Tool> 
+              <Tool x:Name="Entites" Id="EntitiesTree" Title="EntitiesTree" x:DataType="Tool">
+                <TreeView  >
+                  fnmk
+                 klkjk
+                 kjljl
+                </TreeView>
+              </Tool>
+            </ToolDock>
+
+          </ProportionalDock>
+            
+            </ProportionalDock>
+        </RootDock>
+      </DockControl> 
+    </Border>
     
   </Grid>
 </UserControl>

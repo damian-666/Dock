@@ -15,12 +15,14 @@ namespace DockDemoMonoGame
 
         public override void OnFrameworkInitializationCompleted()
         {
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktopLifetime)
             {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                };
+                desktopLifetime.MainWindow = new MainWindow();
+            }
+
+            if (ApplicationLifetime is ISingleViewApplicationLifetime singleLifetime)
+            {
+                singleLifetime.MainView = new MainViewMonoG();
             }
 
             base.OnFrameworkInitializationCompleted();
