@@ -26,4 +26,8 @@
     <ProjectReference Include="..\..\src\Dock.Serializer\Dock.Serializer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" />
+  </ItemGroup>
+
 </Project>

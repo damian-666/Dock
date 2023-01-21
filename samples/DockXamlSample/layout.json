@@ -1,0 +1,462 @@
+﻿{
+  "$id": "1",
+  "$type": "RootDock",
+  "IsFocusableRoot": true,
+  "HiddenDockables": {
+    "$id": "2",
+    "$values": []
+  },
+  "LeftPinnedDockables": {
+    "$id": "3",
+    "$values": []
+  },
+  "RightPinnedDockables": {
+    "$id": "4",
+    "$values": []
+  },
+  "TopPinnedDockables": {
+    "$id": "5",
+    "$values": []
+  },
+  "BottomPinnedDockables": {
+    "$id": "6",
+    "$values": []
+  },
+  "Windows": {
+    "$id": "7",
+    "$values": [
+      {
+        "$id": "8",
+        "$type": "DockWindow",
+        "Id": "DockWindow",
+        "X": 109,
+        "Y": 712,
+        "Width": 250,
+        "Height": 400,
+        "Topmost": true,
+        "Title": "IDockWindow",
+        "Layout": {
+          "$id": "9",
+          "$type": "RootDock",
+          "IsFocusableRoot": true,
+          "HiddenDockables": {
+            "$id": "10",
+            "$values": []
+          },
+          "LeftPinnedDockables": {
+            "$id": "11",
+            "$values": []
+          },
+          "RightPinnedDockables": {
+            "$id": "12",
+            "$values": []
+          },
+          "TopPinnedDockables": {
+            "$id": "13",
+            "$values": []
+          },
+          "BottomPinnedDockables": {
+            "$id": "14",
+            "$values": []
+          },
+          "Window": {
+            "$ref": "8"
+          },
+          "Windows": {
+            "$id": "15",
+            "$values": []
+          },
+          "VisibleDockables": {
+            "$id": "16",
+            "$values": [
+              {
+                "$id": "17",
+                "$type": "ToolDock",
+                "Alignment": -1,
+                "IsExpanded": false,
+                "AutoHide": true,
+                "GripMode": 0,
+                "VisibleDockables": {
+                  "$id": "18",
+                  "$values": [
+                    {
+                      "$id": "19",
+                      "$type": "Tool",
+                      "Id": "ToolWindow",
+                      "Title": "Tool Window",
+                      "CanClose": true,
+                      "CanPin": true,
+                      "CanFloat": true
+                    }
+                  ]
+                },
+                "ActiveDockable": {
+                  "$ref": "19"
+                },
+                "Proportion": "NaN",
+                "Dock": 0,
+                "IsActive": true,
+                "IsCollapsable": true,
+                "Id": "",
+                "Title": "",
+                "CanClose": true,
+                "CanPin": true,
+                "CanFloat": true
+              }
+            ]
+          },
+          "ActiveDockable": {
+            "$ref": "17"
+          },
+          "FocusedDockable": {
+            "$ref": "19"
+          },
+          "Proportion": "NaN",
+          "Dock": 0,
+          "IsActive": false,
+          "IsCollapsable": true,
+          "Id": "",
+          "Title": "",
+          "CanClose": true,
+          "CanPin": true,
+          "CanFloat": true
+        }
+      }
+    ]
+  },
+  "VisibleDockables": {
+    "$id": "20",
+    "$values": [
+      {
+        "$id": "21",
+        "$type": "ProportionalDock",
+        "Orientation": 0,
+        "VisibleDockables": {
+          "$id": "22",
+          "$values": [
+            {
+              "$id": "23",
+              "$type": "ToolDock",
+              "Alignment": 0,
+              "IsExpanded": false,
+              "AutoHide": true,
+              "GripMode": 0,
+              "VisibleDockables": {
+                "$id": "24",
+                "$values": [
+                  {
+                    "$id": "25",
+                    "$type": "Tool",
+                    "Id": "SolutionExplorer",
+                    "Title": "Solution Explorer",
+                    "CanClose": true,
+                    "CanPin": true,
+                    "CanFloat": true
+                  }
+                ]
+              },
+              "ActiveDockable": {
+                "$ref": "25"
+              },
+              "Proportion": 0.25,
+              "Dock": 0,
+              "IsActive": false,
+              "IsCollapsable": true,
+              "Id": "LeftPane",
+              "Title": "",
+              "CanClose": true,
+              "CanPin": true,
+              "CanFloat": true
+            },
+            {
+              "$id": "26",
+              "$type": "ProportionalDockSplitter",
+              "VisibleDockables": {
+                "$id": "27",
+                "$values": []
+              },
+              "Proportion": "NaN",
+              "Dock": 0,
+              "IsActive": false,
+              "IsCollapsable": true,
+              "Id": "LeftSplitter",
+              "Title": "",
+              "CanClose": true,
+              "CanPin": true,
+              "CanFloat": true
+            },
+            {
+              "$id": "28",
+              "$type": "ProportionalDock",
+              "Orientation": 1,
+              "VisibleDockables": {
+                "$id": "29",
+                "$values": [
+                  {
+                    "$id": "30",
+                    "$type": "ProportionalDock",
+                    "Orientation": 0,
+                    "VisibleDockables": {
+                      "$id": "31",
+                      "$values": [
+                        {
+                          "$id": "32",
+                          "$type": "DocumentDock",
+                          "CanCreateDocument": true,
+                          "VisibleDockables": {
+                            "$id": "33",
+                            "$values": [
+                              {
+                                "$id": "34",
+                                "$type": "Document",
+                                "Id": "Document1",
+                                "Title": "Program.cs",
+                                "CanClose": true,
+                                "CanPin": true,
+                                "CanFloat": true
+                              },
+                              {
+                                "$id": "35",
+                                "$type": "Document",
+                                "Id": "Document2",
+                                "Title": "App.axaml",
+                                "CanClose": true,
+                                "CanPin": true,
+                                "CanFloat": true
+                              }
+                            ]
+                          },
+                          "ActiveDockable": {
+                            "$ref": "34"
+                          },
+                          "Proportion": 0.7,
+                          "Dock": 0,
+                          "IsActive": false,
+                          "IsCollapsable": true,
+                          "Id": "DocumentsPane",
+                          "Title": "",
+                          "CanClose": true,
+                          "CanPin": true,
+                          "CanFloat": true
+                        },
+                        {
+                          "$id": "36",
+                          "$type": "ProportionalDockSplitter",
+                          "VisibleDockables": {
+                            "$id": "37",
+                            "$values": []
+                          },
+                          "Proportion": "NaN",
+                          "Dock": 0,
+                          "IsActive": false,
+                          "IsCollapsable": true,
+                          "Id": "RightSplitter",
+                          "Title": "",
+                          "CanClose": true,
+                          "CanPin": true,
+                          "CanFloat": true
+                        },
+                        {
+                          "$id": "38",
+                          "$type": "ToolDock",
+                          "Alignment": 2,
+                          "IsExpanded": false,
+                          "AutoHide": true,
+                          "GripMode": 0,
+                          "VisibleDockables": {
+                            "$id": "39",
+                            "$values": [
+                              {
+                                "$id": "40",
+                                "$type": "Tool",
+                                "Id": "Properties",
+                                "Title": "Properties",
+                                "CanClose": true,
+                                "CanPin": true,
+                                "CanFloat": true
+                              }
+                            ]
+                          },
+                          "ActiveDockable": {
+                            "$ref": "40"
+                          },
+                          "Proportion": 0.3,
+                          "Dock": 0,
+                          "IsActive": false,
+                          "IsCollapsable": true,
+                          "Id": "PropertiesPane",
+                          "Title": "",
+                          "CanClose": true,
+                          "CanPin": true,
+                          "CanFloat": true
+                        }
+                      ]
+                    },
+                    "Proportion": 0.7,
+                    "Dock": 0,
+                    "IsActive": false,
+                    "IsCollapsable": true,
+                    "Id": "RightPane",
+                    "Title": "",
+                    "CanClose": true,
+                    "CanPin": true,
+                    "CanFloat": true
+                  },
+                  {
+                    "$id": "41",
+                    "$type": "ProportionalDockSplitter",
+                    "VisibleDockables": {
+                      "$id": "42",
+                      "$values": []
+                    },
+                    "Proportion": "NaN",
+                    "Dock": 0,
+                    "IsActive": false,
+                    "IsCollapsable": true,
+                    "Id": "BottomSplitter",
+                    "Title": "",
+                    "CanClose": true,
+                    "CanPin": true,
+                    "CanFloat": true
+                  },
+                  {
+                    "$id": "43",
+                    "$type": "ToolDock",
+                    "Alignment": 1,
+                    "IsExpanded": false,
+                    "AutoHide": true,
+                    "GripMode": 0,
+                    "VisibleDockables": {
+                      "$id": "44",
+                      "$values": [
+                        {
+                          "$id": "45",
+                          "$type": "Tool",
+                          "Id": "ErrorList",
+                          "Title": "Error List",
+                          "CanClose": true,
+                          "CanPin": true,
+                          "CanFloat": true
+                        },
+                        {
+                          "$id": "46",
+                          "$type": "Tool",
+                          "Id": "Output",
+                          "Title": "Output",
+                          "CanClose": true,
+                          "CanPin": true,
+                          "CanFloat": true
+                        },
+                        {
+                          "$id": "47",
+                          "$type": "Tool",
+                          "Id": "Keyfrmes",
+                          "Title": "Keyframes",
+                          "CanClose": true,
+                          "CanPin": true,
+                          "CanFloat": true
+                        },
+                        {
+                          "$id": "48",
+                          "$type": "Tool",
+                          "Id": "EntitiesTree",
+                          "Title": "EntitiesTree",
+                          "CanClose": true,
+                          "CanPin": true,
+                          "CanFloat": true
+                        }
+                      ]
+                    },
+                    "ActiveDockable": {
+                      "$ref": "46"
+                    },
+                    "Proportion": 0.3,
+                    "Dock": 0,
+                    "IsActive": false,
+                    "IsCollapsable": true,
+                    "Id": "BottomPane",
+                    "Title": "",
+                    "CanClose": true,
+                    "CanPin": true,
+                    "CanFloat": true
+                  }
+                ]
+              },
+              "Proportion": 0.75,
+              "Dock": 0,
+              "IsActive": false,
+              "IsCollapsable": true,
+              "Id": "TopPane",
+              "Title": "",
+              "CanClose": true,
+              "CanPin": true,
+              "CanFloat": true
+            }
+          ]
+        },
+        "Proportion": "NaN",
+        "Dock": 0,
+        "IsActive": false,
+        "IsCollapsable": true,
+        "Id": "MainLayout",
+        "Title": "",
+        "CanClose": true,
+        "CanPin": true,
+        "CanFloat": true
+      }
+    ]
+  },
+  "ActiveDockable": {
+    "$ref": "21"
+  },
+  "DefaultDockable": {
+    "$ref": "21"
+  },
+  "FocusedDockable": {
+    "$ref": "46"
+  },
+  "Proportion": "NaN",
+  "Dock": 0,
+  "IsActive": false,
+  "IsCollapsable": false,
+  "Id": "Root",
+  "Title": "",
+  "CanClose": true,
+  "CanPin": true,
+  "CanFloat": true
+} ]
+        },
+        "ActiveDockable": {
+          "$ref": "23"
+        },
+        "Proportion": "NaN",
+        "Dock": 0,
+        "IsActive": false,
+        "IsCollapsable": true,
+        "Id": "MainLayout",
+        "Title": "",
+        "CanClose": true,
+        "CanPin": true,
+        "CanFloat": true
+      }
+    ]
+  },
+  "ActiveDockable": {
+    "$ref": "21"
+  },
+  "DefaultDockable": {
+    "$ref": "21"
+  },
+  "FocusedDockable": {
+    "$ref": "44"
+  },
+  "Proportion": "NaN",
+  "Dock": 0,
+  "IsActive": false,
+  "IsCollapsable": false,
+  "Id": "Root",
+  "Title": "",
+  "CanClose": true,
+  "CanPin": true,
+  "CanFloat": true
+}

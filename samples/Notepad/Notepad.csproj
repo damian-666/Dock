@@ -29,4 +29,9 @@
     <UpToDateCheckInput Remove="Views\Layouts\SaveWindowLayoutWindow.axaml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" />
+    <PackageReference Update="reactiveui" Version="18.4.1" />
+  </ItemGroup>
+
 </Project>
