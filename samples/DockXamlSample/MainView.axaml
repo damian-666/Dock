@@ -3,7 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
            xmlns:mg="clr-namespace:AvaloniaInside.MonoGame;assembly=AvaloniaInside.MonoGame"
-             xmlns:AvalonEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="DockXamlSample.MainView"
              xmlns:game ="clr-namespace:DockXamlSample"
@@ -70,15 +69,15 @@
                     <StackPanel x:DataType="Document">
                       <TextBlock Text="Title"/>
                       <TextBox Text="{Binding Title}"/>
-        <!--      P4      mabye even skia based draw tools, or polygon editor tools if they exist somewhere  slike spinte eidt grips-->
-                        </StackPanel>
+                    </StackPanel>
+                    <!--      P4      mabye even skia based draw tools, or polygon editor tools if they exist somewhere  slike spinte eidt grips-->
                   </DocumentTemplate>
                 </DocumentDock.DocumentTemplate>
                 <Document x:Name="Document1" Id="Document1" Title="Program.cs" x:DataType="Document">
                   <StackPanel>
                     <TextBlock Text="{Binding Title}"/>
-
-                    <!--<AvalonEdit:TextEditor Name="Editor"   //TODO MUCH LATER   added a scripting control syntax text editor.. its giving exception i think its due to preivew
+                    <!-- TODO MUCH LATER   added a scripting control syntax text editor.. its giving exception i think its due to preivew -->
+                    <!--<AvalonEdit:TextEditor Name="Editor"  
                             FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
                             Margin="30"
                             Foreground="#D4D4D4"
@@ -95,26 +94,21 @@
               </DocumentDock>
  
               <ProportionalDockSplitter x:Name="RightSplitter" Id="RightSplitter" />
-              <!--P2 demoware toodo tyey his    Grad node edtior  if they eixt on github...t-->
-<!--toodo maybe some buttons , menu itesm,  a tree view ,
-property sheet constrols like existing tool has  see image, a color picket-->
-             
-
+              <!--P2 demoware toodo tyey his    Grad node edtior  if they eixt on github...t
+              toodo maybe some buttons , menu itesm,  a tree view,
+              property sheet constrols like existing tool has  see image, a color picket-->
+              
               <!-- Properties Pane -->
               <ToolDock x:Name="PropertiesPane" Id="PropertiesPane" Proportion="0.3" Alignment="Right">
                 <Tool x:Name="Properties" Id="Properties" Title="Properties" x:DataType="Tool">
                   <Grid  x:DataType= "game:Game1" Background="Beige">
                     <UserControl>
-                  
                       <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"  FallbackBackground="AntiqueWhite"    />
-                      
                     </UserControl>
                   </Grid>
                 </Tool>
-
-                 </ToolDock>
+              </ToolDock>
              <!--       P3  Try a ListBox and , mabye one with custom template  -->
-
 
             </ProportionalDock>
 
@@ -134,31 +128,13 @@ property sheet constrols like existing tool has  see image, a color picket-->
                   <Label>spirit1</Label>
                   <Label>rock</Label>
                   <Label>rock2</Label>
-
-                  
-                  creature
                 </ListBox>
-                
               </Tool>     <!--todo bind to some data items that has collectsoin-->
-              <Tool x:Name="Entites" Id="EntitiesTree" Title="EntitiesTree" x:DataType="Tool">
-                <TreeView  >
-             
-                 fnmk
-                 klkjk
-                 kjljl
-
-                </TreeView>
-
-              </Tool>
             </ToolDock>
-
           </ProportionalDock>
-
         </ProportionalDock>
       </RootDock>
-
     </DockControl>
-
   </Grid>
 </UserControl>
 
