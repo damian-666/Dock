@@ -16,7 +16,6 @@
   <Import Project="..\..\build\Avalonia.Desktop.props" />
   <Import Project="..\..\build\Avalonia.Diagnostics.props" />
   <ItemGroup>
-    <PackageReference Include="Avalonia.Angle.Windows.Natives" Version="2.1.18905.20220610" />
     <PackageReference Include="AvaloniaInside.MonoGame" Version="1.0.0" />
   </ItemGroup>
 
