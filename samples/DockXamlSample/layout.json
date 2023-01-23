@@ -29,8 +29,8 @@
         "$id": "8",
         "$type": "DockWindow",
         "Id": "DockWindow",
-        "X": 109,
-        "Y": 712,
+        "X": 785,
+        "Y": 702,
         "Width": 250,
         "Height": 400,
         "Topmost": true,
@@ -368,7 +368,7 @@
                       ]
                     },
                     "ActiveDockable": {
-                      "$ref": "46"
+                      "$ref": "47"
                     },
                     "Proportion": 0.3,
                     "Dock": 0,
@@ -413,7 +413,7 @@
     "$ref": "21"
   },
   "FocusedDockable": {
-    "$ref": "46"
+    "$ref": "47"
   },
   "Proportion": "NaN",
   "Dock": 0,

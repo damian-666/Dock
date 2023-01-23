@@ -105,9 +105,9 @@ property sheet constrols like existing tool has  see image, a color picket-->
                 <Tool x:Name="Properties" Id="Properties" Title="Properties" x:DataType="Tool">
                   <Grid  x:DataType= "game:Game1" Background="Beige">
                     <UserControl>
-                      <!--P1 
+                  
                       <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"  FallbackBackground="AntiqueWhite"    />
-                      TODO uncomment see excption-->
+                      
                     </UserControl>
                   </Grid>
                 </Tool>

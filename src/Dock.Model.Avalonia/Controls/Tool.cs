@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Reflection.Metadata;
 using System.Runtime.Serialization;
 using Avalonia;
 using Avalonia.Controls;
@@ -96,8 +98,19 @@ public class Tool : DockableBase, ITool, IDocument, IToolContent, ITemplate<Cont
     /// <returns></returns>
     public Control Build(object? data, Control? existing)
     {
-        return existing ?? TemplateContent.Load(Content)?.Control!;
-    }
+        try
+        {
+            return existing ?? TemplateContent.Load(Content)?.Control!;
+        }
+        catch      (Exception exc)
+        {
+            Debug.WriteLine(exc, "MGCONTROL");
+
+        }
+
+        return null;
+          
+        }
 
     private static ControlTemplateResult Load(object templateContent)
     {
