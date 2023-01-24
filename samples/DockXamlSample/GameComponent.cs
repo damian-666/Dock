@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DockXamlSample.Games;
 using Microsoft.Xna.Framework;
 using MonoGame.Framework;
 
 namespace DockXamlSample
 {
 
-    public class Game1 : Game
+    public class GameComponent : Game
     {
-        public Game1 GameSource => new Game1();
-
-        protected override void LoadContent()
+        public GameComponent()
         {
-            base.LoadContent();
+            GameSource = new MonkeyGame();
         }
-        
+        public Game GameSource { get; set; }
+
         protected override void Draw(GameTime gameTime)
         {
-
             GraphicsDevice.Clear(Color.Red);
             base.Draw(gameTime);
         }
