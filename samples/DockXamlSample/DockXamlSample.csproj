@@ -41,12 +41,12 @@
     <PackageReference Include="Avalonia.FreeDesktop" Version="11.0.999-cibuild0028096-beta" />
     <PackageReference Include="AvaloniaEdit.TextMate" Version="11.0.0-preview2" />
     <PackageReference Include="AvaloniaEdit.TextMate.Grammars" Version="0.10.12" />
-    <PackageReference Include="AvaloniaInside.MonoGame" Version="1.0.0" />
     <PackageReference Include="CarinaStudio.AvaloniaEdit" Version="11.0.0.1121-preview" />
     <PackageReference Include="CarinaStudio.AvaloniaEdit.TextMateSharp" Version="11.0.0.1121-preview" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Dock3\src\AvaloniaInside.MonoGame\AvaloniaInside.MonoGame.csproj" />
     <ProjectReference Include="..\..\src\Dock.Model\Dock.Model.csproj" />
     <ProjectReference Include="..\..\src\Dock.Model.Avalonia\Dock.Model.Avalonia.csproj" />
     <ProjectReference Include="..\..\src\Dock.Avalonia\Dock.Avalonia.csproj" />
