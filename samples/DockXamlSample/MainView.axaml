@@ -125,13 +125,13 @@ property sheet constrols like existing tool has  see image, a color picket-->
               <!-- Properties Pane -->
               <ToolDock x:Name="PropertiesPane" Id="PropertiesPane" Proportion="0.3" Alignment="Right">
                 <Tool x:Name="Properties" Id="Properties" Title="Properties" x:DataType="Tool">
-                  <!--<Grid  x:DataType= "game:Game1" Background="Beige">
+                  <Grid  x:DataType= "game:Game1" Background="Beige">
                     <UserControl>
                   
                       <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"      />
                       
                     </UserControl>
-                  </Grid>-->
+                  </Grid>
                 </Tool>
 
                  </ToolDock>

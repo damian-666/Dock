@@ -9,15 +9,15 @@
              d:DesignWidth="300" d:DesignHeight="400"
              x:DataType="vm:Tool1ViewModel" x:CompileBindings="True">
 
-  <Grid Focusable="True"   Background="Beige">
+  <Grid Focusable="True"  Background="LightCoral" >
  
     <!--<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
       <TextBlock Text="{Binding Id}" Padding="2" />
       <TextBlock Text="{Binding Title}" Padding="2" />fi
       <TextBlock Text="{Binding Context}" Padding="2" />-->
-      <UserControl  Background ="White"  >
+      <UserControl   >
   
-                      <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"  />
+                      <!--<mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"  />-->
                     
       </UserControl>
 
