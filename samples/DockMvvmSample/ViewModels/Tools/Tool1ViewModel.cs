@@ -31,7 +31,7 @@ public class Game1 : Microsoft.Xna.Framework.Game
     protected override void Draw(Microsoft.Xna.Framework.GameTime gameTime)
     {
 
-        GraphicsDevice.Clear(Microsoft.Xna.Framework.Color.Beige);
+        GraphicsDevice.Clear(Microsoft.Xna.Framework.Color.DarkRed);
         base.Draw(gameTime);
     }
 }

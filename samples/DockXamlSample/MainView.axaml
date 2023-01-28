@@ -1,21 +1,16 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:mg="clr-namespace:AvaloniaInside.MonoGame;assembly=AvaloniaInside.MonoGame"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:mg="clr-namespace:AvaloniaInside.MonoGame;assembly=AvaloniaInside.MonoGame"
+             xmlns:AvalonEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="DockXamlSample.MainView"
-             xmlns:viewmodels="clr-namespace:DockXamlSample.Viewmodels"
-             x:Name="GameView"
-             x:CompileBindings="True" x:DataType="DockControl">
+             xmlns:game ="clr-namespace:DockXamlSample"
+             x:CompileBindings="True" x:DataType="DockControl"      >
 
-  <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-  <Design.DataContext>
-    <viewmodels:MainViewModel/>
-  </Design.DataContext>
-  
-  <Grid RowDefinitions="Auto, *">
+  <Grid RowDefinitions="Auto,*">
+
     <Menu Grid.Row="0">
       <MenuItem Header="_File">
         <MenuItem x:Name="FileOpenLayout" Header="_Open layout..." Click="FileOpenLayout_OnClick" />
@@ -32,48 +27,160 @@
       </DockControl.Factory>
 
       <RootDock x:Name="Root" Id="Root" IsCollapsable="False" DefaultDockable="{Binding #MainLayout}">
+
+        <!-- Windows -->
+
+        <RootDock.Windows>
+          <DockWindow x:Name="DockWindow" Id="DockWindow" X="281" Y="233" Width="250" Height="400" Topmost="True">
+            <RootDock ActiveDockable="{Binding #ToolDock}" Window="{Binding #DockWindow}">
+              <ToolDock x:Name="ToolDock">
+                <Tool x:Name="ToolWindow" Id="ToolWindow" Title="Tool Window" x:DataType="Tool">
+                  <TextBlock Text="{Binding Title}"/>
+                </Tool>
+              </ToolDock>
+            </RootDock>
+          </DockWindow>
+        </RootDock.Windows>
+
         <ProportionalDock x:Name="MainLayout" Id="MainLayout" Orientation="Horizontal">
 
           <!-- Left Pane -->
 
-          <ToolDock x:Name="LeftPane" Id="LeftPane" Proportion="0.20" Alignment="Left">
+          <ToolDock x:Name="LeftPane" Id="LeftPane" Proportion="0.25" Alignment="Left">
             <Tool x:Name="SolutionExplorer" Id="SolutionExplorer" Title="Solution Explorer" x:DataType="Tool">
               <TextBlock Text="{Binding Title}"/>
             </Tool>
           </ToolDock>
 
           <ProportionalDockSplitter x:Name="LeftSplitter" Id="LeftSplitter" />
-   
-          <ToolDock x:Name="Center Pane" Id="LeftPane" Proportion="0.6" Alignment="Left">
-            <Tool x:Name="Game" Id="Game" Title="Game" x:DataType="Tool">
-              <Grid Background="Beige">
-                <mg:MonoGameControl x:Name="MonoGame" Game="{Binding Monkey, Source={x:Reference GameView}}"  FallbackBackground="AntiqueWhite"    />
-                <TextBlock Foreground="Black" Text="Game"/>
-              </Grid>
-            </Tool>
-          </ToolDock>
-          
-          <!-- Right Pane -->
-          <ProportionalDock x:Name="RightPane" Id="RightPane" Proportion="0.2" Orientation="Horizontal">
+
+          <!-- Top Pane -->
+
+          <ProportionalDock x:Name="TopPane" Id="TopPane" Orientation="Vertical">
+
+            <!-- Right Pane -->
+
+            <ProportionalDock x:Name="RightPane" Id="RightPane" Orientation="Horizontal">
 
               <!-- Documents Pane -->
+
+              <DocumentDock x:Name="DocumentsPane" Id="DocumentsPane" CanCreateDocument="True" ActiveDockable="Document1">
+                <DocumentDock.DocumentTemplate>
+                  <DocumentTemplate>
+                    <StackPanel x:DataType="Document">
+                      <TextBlock Text="Title"/>
+                      <TextBox Text="{Binding Title}"/>
+        <!--      P4      mabye even skia based draw tools, or polygon editor tools if they exist somewhere  slike spinte eidt grips-->
+                        </StackPanel>
+                  </DocumentTemplate>
+                </DocumentDock.DocumentTemplate>
+                <Document x:Name="Document1" Id="Document1" Title="Program.cs" x:DataType="Document">
+                  <StackPanel>
+                    <TextBlock Text="{Binding Title}"/>
+
+                    <!--<AvalonEdit:TextEditor Name="Editor"   //TODO MUCH LATER   added a scripting control syntax text editor.. its giving exception i think its due to preivew
+                            FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
+                            Margin="30"
+                            Foreground="#D4D4D4"
+                            HorizontalScrollBarVisibility="Auto"
+                            VerticalScrollBarVisibility="Visible"
+                            FontWeight="Light"
+                            FontSize="14" />-->
+                  </StackPanel>
+
+                </Document>
+                <Document x:Name="Document2" Id="Document2" Title="App.axaml" x:DataType="Document">
+                  <TextBlock Text="{Binding Title}"/>
+
+                </Document>
+              </DocumentDock>
+
+
+
+              <DocumentDock x:Name="ViewsPane" Id="ViewsPane" CanCreateDocument="True" ActiveDockable="DocumenMG">
+             
+
+
+         
+
+                <Document x:Name="mgvi" Id="mgview" Title="gameview" x:DataType="game:Game1">
+             <Grid  x:DataType= "game:Game1" Background="Beige" >
+                
+                  
+                      <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"  />
+                      
+              </Grid>
+
+                </Document>
+        
+              </DocumentDock>
+              
  
               <ProportionalDockSplitter x:Name="RightSplitter" Id="RightSplitter" />
-              <!--P2 demoware toodo tyey his    Grad node edtior  if they eixt on github...t
-              toodo maybe some buttons , menu itesm,  a tree view,
-              property sheet constrols like existing tool has  see image, a color picket-->
-              
+              <!--P2 demoware toodo tyey his    Grad node edtior  if they eixt on github...t-->
+<!--toodo maybe some buttons , menu itesm,  a tree view ,
+property sheet constrols like existing tool has  see image, a color picket-->
+             
+
               <!-- Properties Pane -->
               <ToolDock x:Name="PropertiesPane" Id="PropertiesPane" Proportion="0.3" Alignment="Right">
                 <Tool x:Name="Properties" Id="Properties" Title="Properties" x:DataType="Tool">
-
+                  <Grid  x:DataType= "game:Game1" Background="Beige">
+                    <UserControl>
+                  
+                      <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"      />
+                      
+                    </UserControl>
+                  </Grid>
                 </Tool>
-              </ToolDock>
+
+                 </ToolDock>
+             <!--       P3  Try a ListBox and , mabye one with custom template  -->
+
+
+            </ProportionalDock>
+
+            <ProportionalDockSplitter x:Name="BottomSplitter" Id="BottomSplitter" />
+
+            <!-- Bottom Pane -->
+
+            <ToolDock x:Name="BottomPane" Id="BottomPane" Proportion="0.3" Alignment="Bottom" ActiveDockable="Output">
+              <Tool x:Name="ErrorList" Id="ErrorList" Title="Error List" x:DataType="Tool">
+                <TextBlock Text="{Binding Title}"/>
+              </Tool>
+              <Tool x:Name="Output" Id="Output" Title="Output" x:DataType="Tool">
+                <TextBlock Text="{Binding Title}"/>
+              </Tool>
+              <Tool x:Name="Keyframes" Id="Keyfrmes" Title="Keyframes" x:DataType="Tool">
+                <ListBox>
+                  <Label>spirit1</Label>
+                  <Label>rock</Label>
+                  <Label>rock2</Label>
+
+                  
+                  creature
+                </ListBox>
+                
+              </Tool>     <!--todo bind to some data items that has collectsoin-->
+              <Tool x:Name="Entites" Id="EntitiesTree" Title="EntitiesTree" x:DataType="Tool">
+                <TreeView  >
+             
+                 fnmk
+                 klkjk
+                 kjljl
+
+                </TreeView>
+
+              </Tool>
+            </ToolDock>
+
           </ProportionalDock>
-          
+
         </ProportionalDock>
       </RootDock>
+
     </DockControl>
+
   </Grid>
 </UserControl>
 

@@ -15,12 +15,9 @@
   <Import Project="..\..\build\Avalonia.Themes.Simple.props" />
   <Import Project="..\..\build\Avalonia.Desktop.props" />
   <Import Project="..\..\build\Avalonia.Diagnostics.props" />
-  <ItemGroup>
-    <PackageReference Include="Avalonia.Angle.Windows.Natives" Version="2.1.18905.20220610" />
-    <PackageReference Include="AvaloniaInside.MonoGame" Version="1.0.0" />
-  </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Dock3\src\AvaloniaInside.MonoGame\AvaloniaInside.MonoGame.csproj" />
     <ProjectReference Include="..\..\src\Dock.Model.Mvvm\Dock.Model.Mvvm.csproj" />
     <ProjectReference Include="..\..\src\Dock.Model\Dock.Model.csproj" />
     <ProjectReference Include="..\..\src\Dock.Avalonia\Dock.Avalonia.csproj" />
