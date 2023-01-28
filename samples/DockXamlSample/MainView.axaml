@@ -1,16 +1,19 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-           xmlns:mg="clr-namespace:AvaloniaInside.MonoGame;assembly=AvaloniaInside.MonoGame"
-             xmlns:AvalonEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mg="clr-namespace:AvaloniaInside.MonoGame;assembly=AvaloniaInside.MonoGame"
+             xmlns:viewmodels="clr-namespace:DockXamlSample.Viewmodels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="DockXamlSample.MainView"
-             xmlns:game ="clr-namespace:DockXamlSample"
-             x:CompileBindings="True" x:DataType="DockControl"      >
-
+             x:Name="MainViewX"
+             x:CompileBindings="True" x:DataType="DockControl">
+  
+  <UserControl.DataContext>
+    <viewmodels:MainViewModel x:Name="ViewModelMainView"/>
+  </UserControl.DataContext>
+  
   <Grid RowDefinitions="Auto,*">
-
     <Menu Grid.Row="0">
       <MenuItem Header="_File">
         <MenuItem x:Name="FileOpenLayout" Header="_Open layout..." Click="FileOpenLayout_OnClick" />
@@ -21,26 +24,31 @@
       </MenuItem>
     </Menu>
 
-    <DockControl x:Name="Dock" Grid.Row="1" InitializeLayout="True" InitializeFactory="True">
+    <DockControl x:Name="DockWindow" Grid.Row="1" InitializeLayout="True" InitializeFactory="True">
+
       <DockControl.Factory>
         <Factory />
       </DockControl.Factory>
 
       <RootDock x:Name="Root" Id="Root" IsCollapsable="False" DefaultDockable="{Binding #MainLayout}">
 
+        <RootDock.DataContext>
+          <viewmodels:MainViewModel/>
+        </RootDock.DataContext>
+        
         <!-- Windows -->
 
-        <RootDock.Windows>
-          <DockWindow x:Name="DockWindow" Id="DockWindow" X="281" Y="233" Width="250" Height="400" Topmost="True">
-            <RootDock ActiveDockable="{Binding #ToolDock}" Window="{Binding #DockWindow}">
-              <ToolDock x:Name="ToolDock">
-                <Tool x:Name="ToolWindow" Id="ToolWindow" Title="Tool Window" x:DataType="Tool">
-                  <TextBlock Text="{Binding Title}"/>
-                </Tool>
-              </ToolDock>
-            </RootDock>
-          </DockWindow>
-        </RootDock.Windows>
+        <!-- <RootDock.Windows> -->
+        <!--   <DockWindow x:Name="DockWindow" Id="DockWindow" X="281" Y="233" Width="250" Height="400" Topmost="True"> -->
+        <!--     <RootDock ActiveDockable="{Binding #ToolDock}" Window="{Binding #DockWindow}"> -->
+        <!--       <ToolDock x:Name="ToolDock"> -->
+        <!--         <Tool x:Name="ToolWindow" Id="ToolWindow" Title="Tool Window" x:DataType="Tool"> -->
+        <!--           <TextBlock Text="{Binding Title}"/> -->
+        <!--         </Tool> -->
+        <!--       </ToolDock> -->
+        <!--     </RootDock> -->
+        <!--   </DockWindow> -->
+        <!-- </RootDock.Windows> -->
 
         <ProportionalDock x:Name="MainLayout" Id="MainLayout" Orientation="Horizontal">
 
@@ -64,48 +72,31 @@
 
               <!-- Documents Pane -->
 
-              <DocumentDock x:Name="DocumentsPane" Id="DocumentsPane" CanCreateDocument="True" ActiveDockable="Document1">
-                <DocumentDock.DocumentTemplate>
-                  <DocumentTemplate>
-                    <StackPanel x:DataType="Document">
-                      <TextBlock Text="Title"/>
-                      <TextBox Text="{Binding Title}"/>
-        <!--      P4      mabye even skia based draw tools, or polygon editor tools if they exist somewhere  slike spinte eidt grips-->
-                        </StackPanel>
-                  </DocumentTemplate>
-                </DocumentDock.DocumentTemplate>
-                <Document x:Name="Document1" Id="Document1" Title="Program.cs" x:DataType="Document">
-                  <StackPanel>
-                    <TextBlock Text="{Binding Title}"/>
-
-                    <!--<AvalonEdit:TextEditor Name="Editor"   //TODO MUCH LATER   added a scripting control syntax text editor.. its giving exception i think its due to preivew
-                            FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
-                            Margin="30"
-                            Foreground="#D4D4D4"
-                            HorizontalScrollBarVisibility="Auto"
-                            VerticalScrollBarVisibility="Visible"
-                            FontWeight="Light"
-                            FontSize="14" />-->
-                  </StackPanel>
-
-                </Document>
-                <Document x:Name="Document2" Id="Document2" Title="App.axaml" x:DataType="Document">
-                  <TextBlock Text="{Binding Title}"/>
-                </Document>
-              </DocumentDock>
+        <!--       <DocumentDock x:Name="DocumentsPane" Id="DocumentsPane" CanCreateDocument="True" ActiveDockable="mgvi"> -->
+        <!--         <DocumentDock.DocumentTemplate> -->
+        <!--           <DocumentTemplate> -->
+        <!--             <StackPanel x:DataType="Document"> -->
+        <!--               <TextBlock Text="Title"/> -->
+        <!--               <TextBox Text="{Binding Title}"/> -->
+        <!-- ~1~      P4      mabye even skia based draw tools, or polygon editor tools if they exist somewhere  slike spinte eidt grips@1@ -->
+        <!--                 </StackPanel> -->
+        <!--           </DocumentTemplate> -->
+        <!--         </DocumentDock.DocumentTemplate> -->
+        <!--         ~1~ <Document x:Name="Document2" Id="Document2" Title="App.axaml" x:DataType="Document"> @1@ -->
+        <!--         ~1~   <TextBlock Text="{Binding Title}"/> @1@ -->
+        <!--         ~1~ </Document> @1@ -->
+        <!--       </DocumentDock> -->
               
-              <DocumentDock x:Name="ViewsPane" Id="ViewsPane" CanCreateDocument="True">
-                <Document x:Name="mgvi" Id="mgview" Title="gameview">
-                   <Grid Background="Beige" >
-                     <!-- <mg:MonoGameControl x:Name="mgControl"/> -->
-                   </Grid>
-                </Document>
-              </DocumentDock>
+              <ToolDock Title="gameview">
+                <Tool x:Name="Gameview" Id="SolutionExplorer" Title="Gameview" x:DataType="Tool">
+                  <mg:MonoGameControl x:Name="MgControl" Game="{Binding MonkeyGame, Source={x:Reference ViewModelMainView}}"/>
+                </Tool>
+              </ToolDock>
  
               <ProportionalDockSplitter x:Name="RightSplitter" Id="RightSplitter" />
               <!--P2 demoware toodo tyey his    Grad node edtior  if they eixt on github...t-->
-<!--toodo maybe some buttons , menu itesm,  a tree view ,
-property sheet constrols like existing tool has  see image, a color picket-->
+              <!--toodo maybe some buttons , menu itesm,  a tree view ,
+              property sheet constrols like existing tool has  see image, a color picket-->
              
 
               <!-- Properties Pane -->
