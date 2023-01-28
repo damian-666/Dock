@@ -17,7 +17,7 @@
   <Import Project="..\..\build\Avalonia.Diagnostics.props" />
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Dock3\src\AvaloniaInside.MonoGame\AvaloniaInside.MonoGame.csproj" />
+    <ProjectReference Include="..\..\src\AvaloniaInside.MonoGame\AvaloniaInside.MonoGame.csproj" />
     <ProjectReference Include="..\..\src\Dock.Model.Mvvm\Dock.Model.Mvvm.csproj" />
     <ProjectReference Include="..\..\src\Dock.Model\Dock.Model.csproj" />
     <ProjectReference Include="..\..\src\Dock.Avalonia\Dock.Avalonia.csproj" />
