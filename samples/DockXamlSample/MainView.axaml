@@ -91,30 +91,16 @@
                 </Document>
                 <Document x:Name="Document2" Id="Document2" Title="App.axaml" x:DataType="Document">
                   <TextBlock Text="{Binding Title}"/>
-
                 </Document>
-              </DocumentDock>
-
-
-
-              <DocumentDock x:Name="ViewsPane" Id="ViewsPane" CanCreateDocument="True" ActiveDockable="DocumenMG">
-             
-
-
-         
-
-                <Document x:Name="mgvi" Id="mgview" Title="gameview" x:DataType="game:Game1">
-             <Grid  x:DataType= "game:Game1" Background="Beige" >
-                
-                  
-                      <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"  />
-                      
-              </Grid>
-
-                </Document>
-        
               </DocumentDock>
               
+              <DocumentDock x:Name="ViewsPane" Id="ViewsPane" CanCreateDocument="True">
+                <Document x:Name="mgvi" Id="mgview" Title="gameview">
+                   <Grid Background="Beige" >
+                     <!-- <mg:MonoGameControl x:Name="mgControl"/> -->
+                   </Grid>
+                </Document>
+              </DocumentDock>
  
               <ProportionalDockSplitter x:Name="RightSplitter" Id="RightSplitter" />
               <!--P2 demoware toodo tyey his    Grad node edtior  if they eixt on github...t-->
@@ -125,17 +111,13 @@ property sheet constrols like existing tool has  see image, a color picket-->
               <!-- Properties Pane -->
               <ToolDock x:Name="PropertiesPane" Id="PropertiesPane" Proportion="0.3" Alignment="Right">
                 <Tool x:Name="Properties" Id="Properties" Title="Properties" x:DataType="Tool">
-                  <Grid  x:DataType= "game:Game1" Background="Beige">
-                    <UserControl>
-                  
-                      <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"      />
-                      
-                    </UserControl>
+                  <Grid Background="Beige">
+                    <mg:MonoGameControl x:Name="mgControl2"/>
                   </Grid>
                 </Tool>
 
                  </ToolDock>
-             <!--       P3  Try a ListBox and , mabye one with custom template  -->
+             <!--       P3  Try a ListBox and , mabybe one with custom template  -->
 
 
             </ProportionalDock>

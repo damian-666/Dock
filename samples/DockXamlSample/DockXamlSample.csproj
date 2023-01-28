@@ -42,6 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
+<!--    <ProjectReference Include="..\..\..\AvaloniaInsideMonogame\src\AvaloniaInside.MonoGame\AvaloniaInside.MonoGame.csproj" />-->
     <ProjectReference Include="..\..\..\Dock3\src\AvaloniaInside.MonoGame\AvaloniaInside.MonoGame.csproj" />
     <ProjectReference Include="..\..\src\Dock.Model\Dock.Model.csproj" />
     <ProjectReference Include="..\..\src\Dock.Model.Avalonia\Dock.Model.Avalonia.csproj" />
