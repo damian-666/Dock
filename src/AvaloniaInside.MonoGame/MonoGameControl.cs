@@ -14,7 +14,7 @@ namespace AvaloniaInside.MonoGame;
 
 public sealed class MonoGameControl : Control
 {
-
+    
 
 #if BRUSHFALLBAK
     /// <summary>

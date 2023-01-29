@@ -70,7 +70,7 @@
                     <StackPanel x:DataType="Document">
                       <TextBlock Text="Title"/>
                       <TextBox Text="{Binding Title}"/>
-        <!--      P4      mabye even skia based draw tools, or polygon editor tools if they exist somewhere  slike spinte eidt grips-->
+        <!--      P4    SKIA DRAW TOOLS  mabye even skia based draw tools, or polygon editor tools if they exist somewhere  slike spinte eidt grips-->
                         </StackPanel>
                   </DocumentTemplate>
                 </DocumentDock.DocumentTemplate>
