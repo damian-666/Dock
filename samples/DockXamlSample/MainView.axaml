@@ -78,14 +78,7 @@
                   <StackPanel>
                     <TextBlock Text="{Binding Title}"/>
 
-                    <!--<AvalonEdit:TextEditor Name="Editor"   //TODO MUCH LATER   added a scripting control syntax text editor.. its giving exception i think its due to preivew
-                            FontFamily="Cascadia Code,Consolas,Menlo,Monospace"
-                            Margin="30"
-                            Foreground="#D4D4D4"
-                            HorizontalScrollBarVisibility="Auto"
-                            VerticalScrollBarVisibility="Visible"
-                            FontWeight="Light"
-                            FontSize="14" />-->
+           
                   </StackPanel>
 
                 </Document>
@@ -103,11 +96,11 @@
 
          
 
-                <Document x:Name="mgvi" Id="mgview" Title="gameview" x:DataType="game:Game1">
-             <Grid  x:DataType= "game:Game1" Background="Beige" >
+                <Document x:Name="mgvi" Id="mgview" Title="gameview" x:DataType="Document" >
+                   <Grid  x:DataType= "game:Game1" Background="Beige" >
                 
                   
-                      <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"  />
+                      <!--<mg:MonoGameControl x:Name="mgControl"   Game="{Binding GameSource}"  />-->
                       
               </Grid>
 
@@ -123,15 +116,18 @@ property sheet constrols like existing tool has  see image, a color picket-->
              
 
               <!-- Properties Pane -->
-              <ToolDock x:Name="PropertiesPane" Id="PropertiesPane" Proportion="0.3" Alignment="Right">
-                <Tool x:Name="Properties" Id="Properties" Title="Properties" x:DataType="Tool">
-                  <Grid  x:DataType= "game:Game1" Background="Beige">
-                    <UserControl>
+              <ToolDock x:Name="MGGAME" Id="PropertiesPane" Proportion="0.3" Alignment="Right">
+                <Tool x:Name="MGGAMEVIEW" Id="MGGAMEVIEW" Title="MGGAMEVIEW" x:DataType="Tool" >
+              
                   
-                      <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}"      />
+                  
+                  <!--<Grid  Background="Green" x:DataType= "game:Game1" >
+                    <UserControl  >
+                  
+                      <mg:MonoGameControl x:Name="mgControl" Game="{Binding GameSource}"      />
                       
                     </UserControl>
-                  </Grid>
+                  </Grid>-->
                 </Tool>
 
                  </ToolDock>
