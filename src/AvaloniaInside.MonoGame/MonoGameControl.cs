@@ -14,10 +14,13 @@ namespace AvaloniaInside.MonoGame;
 
 public sealed class MonoGameControl : Control
 {
-	/// <summary>
-	/// Avalonia property for <see cref="FallbackBackground" />.
-	/// </summary>
-	public static readonly DirectProperty<MonoGameControl, IBrush> FallbackBackgroundProperty =
+    
+
+#if BRUSHFALLBAK
+    /// <summary>
+    /// Avalonia property for <see cref="FallbackBackground" />.
+    /// </summary>
+    public static readonly DirectProperty<MonoGameControl, IBrush> FallbackBackgroundProperty =
 		AvaloniaProperty.RegisterDirect<MonoGameControl, IBrush>(
 			nameof(FallbackBackground),
 			o => o.FallbackBackground,
@@ -31,6 +34,8 @@ public sealed class MonoGameControl : Control
 			nameof(Game),
 			o => o.Game,
 			(o, v) => o.Game = v);
+
+#endif
 
 	private readonly Stopwatch _stopwatch = new();
 	private readonly GameTime _gameTime = new();
@@ -56,11 +61,12 @@ public sealed class MonoGameControl : Control
 	{
 		Focusable = true;
 	}
-
-	/// <summary>
-	/// Gets or sets the fallback background brush.
-	/// </summary>
-	public IBrush FallbackBackground { get; set; } = Brushes.Purple;
+#if BRUSHFALLBACK
+    /// <summary>
+    /// Gets or sets the fallback background brush.
+    /// </summary>
+    public IBrush FallbackBackground { get; set; } = Brushes.Purple;
+#endif
 
 	/// <summary>
 	/// Gets or sets the game.
@@ -88,8 +94,15 @@ public sealed class MonoGameControl : Control
 		    || Bounds is { Width: < 1, Height: < 1 }
 		    || !HandleDeviceReset(device))
 		{
-			context.DrawRectangle(FallbackBackground, null, new Rect(Bounds.Size));
-			return;
+#if BRUSHFALLBACK
+            context.DrawRectangle(FallbackBackground, null, new Rect(Bounds.Size));
+
+#else
+            context.DrawRectangle(Brushes.Brown, null, new Rect(Bounds.Size));
+#endif
+
+
+            return;
 		}
 
 		// Execute a frame
