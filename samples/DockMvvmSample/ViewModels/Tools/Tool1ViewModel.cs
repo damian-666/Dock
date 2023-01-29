@@ -10,15 +10,7 @@ using Color = Avalonia.Media.Color;
 
 public class Tool1ViewModel : Tool
 {
-    
-
-    
-
-
     public Game1 GameSource => new Game1();
-
-
-
 }
 
 public class Game1 : Microsoft.Xna.Framework.Game

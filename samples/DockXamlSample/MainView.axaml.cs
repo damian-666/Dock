@@ -16,6 +16,7 @@ using Dock.Serializer;
 
 using AvaloniaInside.MonoGame;
 using DockXamlSample;
+using DockXamlSample.Viewmodels;
 
 namespace DockXamlSample;
 
@@ -27,13 +28,9 @@ public class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
-
-        // _serializer = new DockSerializer(typeof(AvaloniaList<>));
         _serializer = new AvaloniaDockSerializer();
 
         _dockState = new DockState();
-        
-    
 
         var dock = this.FindControl<DockControl>("Dock");
         if (dock is { })
@@ -49,6 +46,8 @@ public class MainView : UserControl
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
+        
+        
     }
 
     private List<FilePickerFileType> GetOpenOpenLayoutFileTypes()
