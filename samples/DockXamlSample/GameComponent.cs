@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DockXamlSample.Games;
-using Microsoft.Xna.Framework;
-using MonoGame.Framework;
+﻿using Microsoft.Xna.Framework;
 
 namespace DockXamlSample
 {
@@ -14,8 +7,8 @@ namespace DockXamlSample
     {
         public GameComponent()
         {
-            GameSource = new MonkeyGame();
         }
+
         public Game GameSource { get; set; }
 
         protected override void Draw(GameTime gameTime)
