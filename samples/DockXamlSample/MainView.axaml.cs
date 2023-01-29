@@ -27,7 +27,6 @@ public class MainView : UserControl
 
     public MainView()
     {
-        DataContext = new MainViewModel();
         InitializeComponent();
 
         // _serializer = new DockSerializer(typeof(AvaloniaList<>));

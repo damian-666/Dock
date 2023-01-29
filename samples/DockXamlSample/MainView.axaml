@@ -7,11 +7,11 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="DockXamlSample.MainView"
              x:Name="MainViewX"
-             x:CompileBindings="True" x:DataType="DockControl">
+             x:DataType="DockControl">
   
-  <UserControl.DataContext>
-    <viewmodels:MainViewModel x:Name="ViewModelMainView"/>
-  </UserControl.DataContext>
+  <Design.DataContext>
+    <viewmodels:MainViewModel/>
+  </Design.DataContext>
   
   <Grid RowDefinitions="Auto,*">
     <Menu Grid.Row="0">
@@ -56,7 +56,7 @@
 
           <ToolDock x:Name="LeftPane" Id="LeftPane" Proportion="0.25" Alignment="Left">
             <Tool x:Name="SolutionExplorer" Id="SolutionExplorer" Title="Solution Explorer" x:DataType="Tool">
-              <TextBlock Text="{Binding Title}"/>
+              <TextBlock Text="Solution Explorer"/>
             </Tool>
           </ToolDock>
 
@@ -69,27 +69,10 @@
             <!-- Right Pane -->
 
             <ProportionalDock x:Name="RightPane" Id="RightPane" Orientation="Horizontal">
-
-              <!-- Documents Pane -->
-
-        <!--       <DocumentDock x:Name="DocumentsPane" Id="DocumentsPane" CanCreateDocument="True" ActiveDockable="mgvi"> -->
-        <!--         <DocumentDock.DocumentTemplate> -->
-        <!--           <DocumentTemplate> -->
-        <!--             <StackPanel x:DataType="Document"> -->
-        <!--               <TextBlock Text="Title"/> -->
-        <!--               <TextBox Text="{Binding Title}"/> -->
-        <!-- ~1~      P4      mabye even skia based draw tools, or polygon editor tools if they exist somewhere  slike spinte eidt grips@1@ -->
-        <!--                 </StackPanel> -->
-        <!--           </DocumentTemplate> -->
-        <!--         </DocumentDock.DocumentTemplate> -->
-        <!--         ~1~ <Document x:Name="Document2" Id="Document2" Title="App.axaml" x:DataType="Document"> @1@ -->
-        <!--         ~1~   <TextBlock Text="{Binding Title}"/> @1@ -->
-        <!--         ~1~ </Document> @1@ -->
-        <!--       </DocumentDock> -->
               
               <ToolDock Title="gameview">
                 <Tool x:Name="Gameview" Id="SolutionExplorer" Title="Gameview" x:DataType="Tool">
-                  <mg:MonoGameControl x:Name="MgControl" Game="{Binding MonkeyGame, Source={x:Reference ViewModelMainView}}"/>
+                  <mg:MonoGameControl x:Name="MgControl" Game="{Binding MonkeyGame}"/>
                 </Tool>
               </ToolDock>
  
@@ -102,9 +85,9 @@
               <!-- Properties Pane -->
               <ToolDock x:Name="PropertiesPane" Id="PropertiesPane" Proportion="0.3" Alignment="Right">
                 <Tool x:Name="Properties" Id="Properties" Title="Properties" x:DataType="Tool">
-                  <Grid Background="Beige">
-                    <mg:MonoGameControl x:Name="mgControl2"/>
-                  </Grid>
+                  <!-- <Grid Background="Beige"> -->
+                  <!--   <mg:MonoGameControl x:Name="MgControl2" Game="{Binding MonkeyGame}"/> -->
+                  <!-- </Grid> -->
                 </Tool>
 
                  </ToolDock>
@@ -119,10 +102,10 @@
 
             <ToolDock x:Name="BottomPane" Id="BottomPane" Proportion="0.3" Alignment="Bottom" ActiveDockable="Output">
               <Tool x:Name="ErrorList" Id="ErrorList" Title="Error List" x:DataType="Tool">
-                <TextBlock Text="{Binding Title}"/>
+                <TextBlock Text="Error List"/>
               </Tool>
               <Tool x:Name="Output" Id="Output" Title="Output" x:DataType="Tool">
-                <TextBlock Text="{Binding Title}"/>
+                <TextBlock Text="Output"/>
               </Tool>
               <Tool x:Name="Keyframes" Id="Keyfrmes" Title="Keyframes" x:DataType="Tool">
                 <ListBox>
