@@ -35,20 +35,6 @@
         <RootDock.DataContext>
           <viewmodels:MainViewModel/>
         </RootDock.DataContext>
-        
-        <!-- Windows -->
-
-        <!-- <RootDock.Windows> -->
-        <!--   <DockWindow x:Name="DockWindow" Id="DockWindow" X="281" Y="233" Width="250" Height="400" Topmost="True"> -->
-        <!--     <RootDock ActiveDockable="{Binding #ToolDock}" Window="{Binding #DockWindow}"> -->
-        <!--       <ToolDock x:Name="ToolDock"> -->
-        <!--         <Tool x:Name="ToolWindow" Id="ToolWindow" Title="Tool Window" x:DataType="Tool"> -->
-        <!--           <TextBlock Text="{Binding Title}"/> -->
-        <!--         </Tool> -->
-        <!--       </ToolDock> -->
-        <!--     </RootDock> -->
-        <!--   </DockWindow> -->
-        <!-- </RootDock.Windows> -->
 
         <ProportionalDock x:Name="MainLayout" Id="MainLayout" Orientation="Horizontal">
 
@@ -56,7 +42,7 @@
 
           <ToolDock x:Name="LeftPane" Id="LeftPane" Proportion="0.25" Alignment="Left">
             <Tool x:Name="SolutionExplorer" Id="SolutionExplorer" Title="Solution Explorer" x:DataType="Tool">
-              <TextBlock Text="Solution Explorer"/>
+              <TextBlock Text="{Binding String1}"/>
             </Tool>
           </ToolDock>
 

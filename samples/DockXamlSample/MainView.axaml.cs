@@ -28,8 +28,6 @@ public class MainView : UserControl
     public MainView()
     {
         InitializeComponent();
-
-        // _serializer = new DockSerializer(typeof(AvaloniaList<>));
         _serializer = new AvaloniaDockSerializer();
 
         _dockState = new DockState();

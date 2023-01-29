@@ -9,10 +9,15 @@ public class MainViewModel : ReactiveObject
     public MainViewModel()
     {
         MonkeyGame = new MonkeyGame();
+        GamePong = new AutoPongGame();
+        String1 = "Solution Explorer";
     }
 
     public MonkeyGame MonkeyGame { get; set; }
-    // public AutoPongGame GamePong { get; set; } = new();
+
+    public AutoPongGame GamePong { get; set; }
+
+    public string String1 { get; set; }
 
     public Avalonia.Media.Color DiffuseColor
     {
