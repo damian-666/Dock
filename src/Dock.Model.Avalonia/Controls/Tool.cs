@@ -103,8 +103,14 @@ public class Tool : DockableBase, ITool, IDocument, IToolContent, ITemplate<Cont
 
             //TODO this doenst work needs a Templatecontent o
 
-        //   return Content as Control;
-  
+            //   return Content as Control;
+
+            //stilll i using tool agein needs a tejmpate
+            //or IServiceProvidor..
+
+            /// set focus ot the right pagen MGVewi to make it try again activate..
+
+
             return existing ?? TemplateContent.Load(Content)?.Control!;
         }
         catch      (Exception exc)
