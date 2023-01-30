@@ -100,12 +100,16 @@ public class Tool : DockableBase, ITool, IDocument, IToolContent, ITemplate<Cont
     {
         try
         {
+
+            //TODO this doenst work needs a Templatecontent o
+
+        //   return Content as Control;
+  
             return existing ?? TemplateContent.Load(Content)?.Control!;
         }
         catch      (Exception exc)
         {
             Debug.WriteLine(exc, "MGCONTROL");
-
         }
 
         return null;

@@ -37,6 +37,18 @@ public sealed class DocumentTemplate : IDocumentTemplate, ITemplate<Control>, IR
     [IgnoreDataMember]
     public Type? DataType { get; set; }
 
+
+    //TODO hook in a MGView as a typ e of docuemnts , an MonogameCanvas or somethign
+    //it really is a document
+    //it will be used for eiditing levels....
+
+    //i used a tool 
+
+    //stilll i using tool agein needs a tejmpate
+    //or IServiceProvidor..
+
+    /// set focus ot the right pagen MGVewi to make it try again activate..
+
     /// <summary>
     /// 
     /// </summary>

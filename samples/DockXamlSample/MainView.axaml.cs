@@ -16,6 +16,8 @@ using Dock.Serializer;
 
 using AvaloniaInside.MonoGame;
 using DockXamlSample;
+using Dock.Model.Avalonia.Controls;
+using Avalonia.LogicalTree;
 
 namespace DockXamlSample;
 
@@ -32,8 +34,12 @@ public class MainView : UserControl
         _serializer = new AvaloniaDockSerializer();
 
         _dockState = new DockState();
-        
-    
+
+
+
+  //      var  mgControlUser = this.FindControl<ToolControl>("MGGAMEVIEW");
+
+     
 
         var dock = this.FindControl<DockControl>("Dock");
         if (dock is { })
@@ -46,9 +52,50 @@ public class MainView : UserControl
         }
     }
 
+    Game1 game1;
+
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
+
+        //     mgContro.Game = new Game1();
+        //  var mgContro = new MonoGameControl();
+
+
+        //    MonoGameControl mgContro =   this.FindControl<MonoGameControl>("mgControl");
+
+   //     var mgControlUser = this.FindControl<UserControl>("mgControlUC");
+
+   
+
+
+        var dock = this.FindControl<DockControl>("Dock");
+
+        INameScope nameScope= this.FindNameScope();
+
+            Tool mgtool= nameScope.Find<Tool>("MGGAMEVIEW");
+       // var mgControlUser = dock.Find<UserControl>();
+
+        if (mgtool != null)
+        {
+            var mgContro = new MonoGameControl();
+
+            game1 = new Game1();
+            mgContro.Game = game1;
+            mgtool.Content = mgContro;
+
+
+          //  game1.RunOneFrame();
+          
+   
+
+            //     MonoGameControl mgContro =   this.Find<MonoGameControl>("mgControl");
+  //          mgContro.Game = new Game1();
+   //         mgContro.Game.Run();
+        }
+
+  
+
     }
 
     private List<FilePickerFileType> GetOpenOpenLayoutFileTypes()

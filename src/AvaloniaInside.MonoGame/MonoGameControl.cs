@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AvaloniaInside.MonoGame;
 
-public sealed class MonoGameControl : Control
+public  class MonoGameControl : Control
 {
     
 
