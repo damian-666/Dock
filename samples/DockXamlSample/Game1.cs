@@ -76,7 +76,7 @@ namespace DockXamlSample
 
        _res.Begin();
             _spriteBatch.Begin();
-            GraphicsDevice.Clear(Color.Red);
+            GraphicsDevice.Clear(Color.Green);
 
             _spriteBatch.End();
             _res.End();

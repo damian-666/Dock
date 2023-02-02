@@ -18,6 +18,7 @@ using AvaloniaInside.MonoGame;
 using DockXamlSample;
 using Dock.Model.Avalonia.Controls;
 using Avalonia.LogicalTree;
+using Microsoft.Xna.Framework;
 
 namespace DockXamlSample;
 
@@ -54,14 +55,15 @@ public class MainView : UserControl
 
     Game1 game1;
 
+
+    Game GameSource => new Game1();
+
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
 
         //     mgContro.Game = new Game1();
         //  var mgContro = new MonoGameControl();
-
-
         //    MonoGameControl mgContro =   this.FindControl<MonoGameControl>("mgControl");
 
    //     var mgControlUser = this.FindControl<UserControl>("mgControlUC");
@@ -85,8 +87,10 @@ public class MainView : UserControl
             mgtool.Content = mgContro;
 
 
-          //  game1.RunOneFrame();
-          
+         game1.RunOneFrame();
+         //   game1.Run();
+
+            
    
 
             //     MonoGameControl mgContro =   this.Find<MonoGameControl>("mgControl");

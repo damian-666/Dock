@@ -97,9 +97,8 @@
          
 
                 <Document x:Name="mgvi" Id="mgview" Title="gameview" x:DataType="Document" >
-                   <!--<Grid  x:DataType= "game:Game1" Background="Beige" >
-                
-                  
+                   <!--    MGATTEMPT <Grid  x:DataType= "game:Game1" Background="Beige" >
+               
                     <mg:MonoGameControl x:Name="mgControl"   Game="{Binding GameSource}"  />-
                       
               </Grid>-->
@@ -117,16 +116,16 @@ property sheet constrols like existing tool has  see image, a color picket-->
 
               <!-- Properties Pane -->
               <ToolDock x:Name="MGGAME" Id="PropertiesPane" Proportion="0.3" Alignment="Right">
-                <Tool x:Name="MGGAMEVIEW" Id="MGGAMEVIEW" Title="MGGAMEVIEW" x:DataType="mg:MonoGameControl">
+                <Tool x:Name="MGGAMEVIEW" Id="MGGAMEVIEW" Title="MGGAMEVIEW" x:DataType="Tool">
               
                   
                   
                   <!--Grid  Background="Green"  >-->
 
-                    <UserControl x:Name="mgControlUC">
-                      <!--<mg:MonoGameControl x:Name="mgControl" Game="{Binding GameSource}"    ></mg:MonoGameControl> 
-                     <mg:MonoGameControl    x:Name="mgControl"   />-->
-                    </UserControl>
+                    <!--<UserControl x:Name="mgControlUC" x:DataType="game">
+                      <mg:MonoGameControl x:Name="mgControl"  Game="{Binding GameSource}" ></mg:MonoGameControl> 
+          
+                    </UserControl>-->
 
                <!-- </Grid>-->
                 </Tool>
