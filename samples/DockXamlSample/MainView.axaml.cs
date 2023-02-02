@@ -62,43 +62,45 @@ public class MainView : UserControl
     {
         AvaloniaXamlLoader.Load(this);
 
-        //     mgContro.Game = new Game1();
+        //     mgControl.Game = new Game1();
         //  var mgContro = new MonoGameControl();
         //    MonoGameControl mgContro =   this.FindControl<MonoGameControl>("mgControl");
 
-   //     var mgControlUser = this.FindControl<UserControl>("mgControlUC");
+        //     var mgControlUser = this.FindControl<UserControl>("mgControlUC");
 
-   
+
 
 
         var dock = this.FindControl<DockControl>("Dock");
 
-        INameScope nameScope= this.FindNameScope();
+        INameScope nameScope = this.FindNameScope();
 
-            Tool mgtool= nameScope.Find<Tool>("MGGAMEVIEW");
-       // var mgControlUser = dock.Find<UserControl>();
+        Tool mgtool = nameScope.Find<Tool>("MGGAMEVIEW");
+        // var mgControlUser = dock.Find<UserControl>();
 
         if (mgtool != null)
         {
-            var mgContro = new MonoGameControl();
+            var mgControl = new MonoGameControl();
 
             game1 = new Game1();
-            mgContro.Game = game1;
-            mgtool.Content = mgContro;
+            mgControl.Game = game1;
+            mgtool.Content = mgControl;
+        } 
 
 
-         game1.RunOneFrame();
-         //   game1.Run();
+            // game1.RunOneFrame();
+            //   game1.Run(GameRunBehavior.Asynchronous);
+          game1.Run();//blocks  anyways seems totallly wrong .. 
 
-            
-   
+
+
 
             //     MonoGameControl mgContro =   this.Find<MonoGameControl>("mgControl");
-  //          mgContro.Game = new Game1();
-   //         mgContro.Game.Run();
-        }
+            //          mgContro.Game = new Game1();
+            //         mgContro.Game.Run();
+        
 
-  
+
 
     }
 
